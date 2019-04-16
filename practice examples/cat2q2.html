@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>cat2q2</title>
+	
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		
+		$(document).ready(function(){
+			$("#sub").click(function(){
+				alert('entered');
+				var a=$("#inp").val;
+				alert(a1+1);
+				var i=1;
+				var arr=new Array();
+				for(var i=1;i<=a1;i++)
+				{
+					arr.psuh(i);
+				}
+
+				alert(arr);
+				var msg='';
+				if(arr.sum()==a1)
+				{
+						msg="strong number";
+				}
+				else
+				{
+					msg="invalid input";
+				}
+
+				$(res1)=text(msg);
+				//$(res).slidedown();
+			});
+
+		});
+	</script>
+</head>
+<body>
+
+
+<input type="text" name="text" id="inp">
+<button type="submit" id="sub">submit</button>
+<p id="res1" style="background-color: red;"></p>
+	<!-- <div id="out">slide bitch </div>
+	<div id="res" style="background-color: yellow;">
+		<p id="res1" style="background-color: red;"></p>
+	</div> -->
+
+</body>
+</html>

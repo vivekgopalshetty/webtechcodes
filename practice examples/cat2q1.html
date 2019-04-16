@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>cat2q1</title>
+
+	<script type="text/javascript">
+		
+		function checker() {
+		var a=document.getElementById('inp').value;
+		if(a=="")
+		{
+			alert("empty string passed");
+		}
+
+		var arr=new Array();
+			arr=a.split(" ");
+			alert(arr[0]);
+			if(arr.includes('the'))
+			{
+				ind=arr.lastIndexOf('the');
+				alert(ind);
+			}
+			else
+			{
+				alert('the not found');
+			}
+
+		arr[ind]="on";
+		var st=arr.join(" ");
+		alert(st);
+		
+	}
+	</script>
+</head>
+<body>
+<input type="text" name="name" id="inp">
+<button type="submit" onclick="checker()">click </button>
+
+<p id="res">result will be displayed here</p>
+</body>
+</html>

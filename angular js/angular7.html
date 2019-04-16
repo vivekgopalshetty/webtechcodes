@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>angular 7</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+</head>
+<body>
+	<div ng-app="myapp">
+		<p><a href=""#/>Main page</a></p>
+
+		<a href="#red">red</a>
+		<a href="#green">green</a>
+		<a href="#blue">blue</a>
+
+		<div ng-view></div>
+	</div>
+
+
+	<script>
+		var app=angular.module('myapp',['ngRoute']);
+		app.config(function($routeProvider) {
+			$routeProvider
+			.when("/",{templateUrl:"angular1.html",controller:"myctrl1"})
+			.when("/red",{templateUrl:"angular2.html",controller:"myctrl2"})
+			.when("/green",{templateUrl:"angular3.html"})
+			.when("/blue",{templateUrl:"angular4.html"});
+		});
+
+
+		app.controller('myctrl1',function($scope)
+		{
+			$scope.msg="i love";
+		});
+
+		app.controller('myctrl2',function($scope)
+		{
+			$scope.msg="i love it";
+		})
+
+
+	</script>
+</body>
+</html>

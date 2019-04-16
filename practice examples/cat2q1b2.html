@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>catq1b2</title>
+
+
+	<script type="text/javascript">
+		
+
+		function process() {
+			
+			function reducer(num)
+			{
+				var ans;
+				no=num;
+				while(num%10==0)
+				{
+					var arr=new Array();
+					arr=num.split();
+					var no=arr.sum();
+					num=no;
+					alert(arr);
+
+				}
+				return no;
+			}
+
+			function val()
+			{
+				var a=document.getElementById('inp').value;
+				var num=0;
+				a=a.toLowerCase();
+				for( var i=0;i<a.length;i++)
+				{
+					num=num+a.charCodeAt(i)-96;
+
+				}
+				return num;
+			}
+
+			var number=val();
+			var ans=reducer(number);
+			document.getElementById("bul").innerHTML=ans;
+		}
+
+	</script>
+</head>
+<body>
+
+	<input type="text" name="name" id="inp">
+	<button type="submit" id="disp" onclick="process();">Submit</button>
+
+	<p id="bul"></p>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>fatq3</title>
+
+	<script type="text/javascript">
+
+	function render()
+	{
+		var a=document.getElementById("inp").value;
+
+
+		var time=new Array();
+		var time=a.split(" ")
+
+		var arr=new Array();
+		var arr=time[0].split(":");
+
+		alert(time);
+		alert(time[1]);
+		st='';
+		if(time[1]=="AM")
+		{
+			hour=arr[0];
+			st=arr[0].toString()+":"+arr[1].toString()+":"+arr[2].toString();
+		}
+		else
+		{
+			hour=arr[0];
+			if(hour==12)
+			{
+				hour=0;
+			}
+			else
+			{
+				hour=hour+12;
+			}
+			st=hour.toString()+":"+arr[1].toString()+":"+arr[2].toString();
+		}
+
+		alert(st);
+	}
+	</script>
+</head>
+<body>
+
+	<input type="text" name="name" id="inp">
+	<button type="submit" onclick="render();">Submit</button>
+
+</body>
+</html>

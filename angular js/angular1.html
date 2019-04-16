@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>angular1</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+<body>
+
+	<div ng-app="" ng-init="firstname='vivek';lastname='gopal'">
+		<input type="text" name="fname" ng-model="firstname">
+		<input type="text" name="lname" ng-model="lastname">
+
+		<p>use ng-bind to bind</p>
+		<p ng-bind="firstname"></p>
+		<p ng-bind="lastname"></p>
+
+		<p>use expressions to bind</p>
+		<p >{{firstname}}</p>
+		<p >{{lastname}}</p>
+
+	</div>
+
+</body>
+</html>

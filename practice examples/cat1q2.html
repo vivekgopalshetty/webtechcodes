@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>cat1q3</title>
+
+<script type="text/javascript">
+	
+	function sum()
+	{
+	
+	var a1=document.getElementById('number1').value;
+	var a2=document.getElementById('number2').value;
+	var a3=document.getElementById('number3').value;
+
+	var sum=parseInt(a1)+parseInt(a2)+parseInt(a3);
+	alert(sum);
+	document.getElementById('vie').innerHTML=sum;
+}
+</script>
+</head>
+<body>
+	<input type="text" name="number1" id="number1">
+	<input type="text" name="number2" id="number2">
+	<input type="text" name="number3" id="number3">
+	<button type="submit" onclick="sum();">press</button>
+<p id="vie"></p>
+
+</body>
+</html>

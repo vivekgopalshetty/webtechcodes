@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>fatq5</title>
+</head>
+<body>
+
+	<div ng-app="myapp" ng-controller="myctrl">
+
+		<p><a href="#!/">main</a></p>
+
+		<ul>
+			<li><a href="#!red"></a></li>
+			<li><a href="#!green"></a></li>
+			<li><a href="#!blue"></a></li>
+		</ul>
+
+		<div ng-view></div>
+	</div>
+
+	<script>
+		var app=angular.module('myapp',['ngRoute']);
+		app.config(function($routeProvider)
+		{
+			$routeProvider
+			.when("/",templateUrl:"")
+			.when("/red",templateUrl:"")
+			.when("/green",templateUrl:"")
+			.when("/blue",templateUrl:"");
+		});
+	</script>
+</body>
+</html>

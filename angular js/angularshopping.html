@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>shopping</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+</head>
+<body>
+	<div ng-app="myapp" ng-controller="myctrl">
+		<table>
+			<tr>
+				<th>name</th>
+				<th>price</th>
+				<th>remove</th>
+			</tr>
+
+			<tr ng-repeat="x in items">
+				<td>{{x.name}}</td>
+				<td>{{x.price}}</td>
+				<td><button ng-click="adder()">remove</button></td>
+			</tr>
+		</table>
+
+		<input type="text" name="name" ng-model="additem">
+		<button ng-click="remove()">add</button>
+	</div>
+
+	<script>
+		
+		var app=angular.model('myapp',[]);
+		app.controller('myctrl',function($scope)
+		{
+			var arr=[
+			{
+				name:"buy",
+				price:20
+			}
+			{
+				name:"ola",
+				price:40
+			}
+			];
+
+			$scope.items=arr;
+			$scope.adder=function()
+			{
+				$scope.items.push($scope.additem);
+				$scope.additem="";
+			}
+
+		});
+	</script>
+</body>
+</html>

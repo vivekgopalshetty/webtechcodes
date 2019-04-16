@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+	h1
+	{
+	color:deeppink; text-align:center;
+	font-family:lucida calligraphy;
+	}
+	h2
+	{
+	color:deeppink;font-family:lucida calligraphy
+	}
+	#md
+	{
+	padding-top:5px;
+	background-color:pink;
+	height:100%;
+	width:100%;
+	display:inline block;
+	padding-bottom:5px;
+	}
+	#as, #ws, #es, #fs
+	{
+	margin-left:50px;
+	margin-right:50px;
+	margin-bottom:5px;
+	margin-top:5px;
+	padding-left:500px;
+	padding-bottom:20px;
+	padding-top:20px;
+	}
+	#as{background-color:lightblue;}
+	#es{background-color:tomato;}
+	#fs{background-color:yellow;}
+	#ws{background-color:blue;}
+	</style>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
+<script>
+var app = angular.module("myApp", []);
+app.controller("myCtrl", function($scope) {
+	$scope.waterSign = [ 'Pisceas','Cancer','Scorpio' ];
+	
+
+$scope.show = function()
+{
+	if ( $scope.wS == 'Pisceas')
+	{
+		var msg =['The Pisces zodiac has arrived.',
+		'People born between February 19-March 20 are Pisceans.',
+		'Pisceans are emotional yet detached, born dreamers and',
+		'compassionate at heart, intuitive and creative'] ;
+		$scope.pMsg = msg.join(' ');
+	}
+}
+
+$scope.hideMe = function(){$scope.pMsg = " ";}
+});
+</script>
+</head>
+
+
+<body>
+<div id ="md" ng-app="myApp" ng-controller="myCtrl">
+	<h1> Know What your Zodaic says about you</h1>
+
+	<div id="ws">
+	<h2> Water Sign</h2>
+	<select ng-model="wS" ng-options="a for a in waterSign" ng-click='show();'>
+	</select> 
+<br>
+	<p ng-click='hideMe();'><span ng-model='pMsg'>{{pMsg}}</span></p>
+	</div>
+
+
+</div>
+</body>
+</html>

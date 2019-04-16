@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>angular3</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+<body>
+	<div ng-app="myapp" ng-controller="myctrl">
+		
+		<ul>
+			<li ng-repeat="x in arr">{{x}}</li>
+		</ul>
+		<input type="text" name="fname" ng-model="name">
+		<button ng-click="adder();">add</button>
+	</div>
+
+
+	<script>
+		
+		var app=angular.module('myapp',[]);
+		app.controller('myctrl',function($scope)
+		{
+			$scope.arr=['cnsvn','cjksv'];
+			$scope.adder= function()
+			{
+				$scope.arr.push($scope.name);
+				$scope.name="";
+			}
+		});
+	</script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ajax file open </title>
+
+	<script type="text/javascript">
+		
+		function loadtext()
+		{
+			var xmlhttp=new XMLHttpRequest();
+
+			xmlhttp.onreadystatechange=function(){
+				alert(xmlhttp.readystate);
+				if(xmlhttp.readystate==4 && xmlhttp.status==200)
+				{
+					document.getElementById("mydiv").innerHTML=responseText;
+				}
+			}
+
+			xmlhttp.open("GET",'h.txt',true);
+			xmlhttp.send();
+
+		}
+
+	</script>
+</head>
+<body>
+	<div id="mydiv"><h5>here text will change</h5></div>
+	<button onclick="loadtext()">click</button>
+</body>
+</html>

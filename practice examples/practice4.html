@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>fatq4</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script>
+		
+		$(document).ready(function()
+		{
+			$("#click").click(function(){
+
+				var a=$("#inp").val();
+
+				var arr=new Array();
+				arr=a.split(" ")
+				var st="";
+				var check=arr[0];
+			
+				for(var i=1;i<arr.length;i++)
+				{
+					st=st+arr[i].charAt(0);
+				}
+
+				if(st==check)
+				{
+					msg="its is";
+				}
+				else
+				{
+					msg="no it is not";
+				}
+
+				$("#c").text(msg);
+				alert(check);
+				alert(st);
+				
+			});
+		});
+	</script>
+</head>
+<body>
+	<input type="text" name="name" id="inp">
+	<button type="submit" id="click">Submit</button>
+
+	<p id="c"></p>
+</body>
+</html>

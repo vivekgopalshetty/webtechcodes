@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>angular5</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+<body>
+	<div ng-app="myapp" ng-controller="myctrl">
+	
+	<input type="text" name="name" ng-model="qst">
+	<table border="1">
+		<tr>
+			<th>country</th>
+			<th>capital</th>
+			<th>National sport</th>
+		</tr>
+		<tr ng-repeat="x in countries|orderBy:'sport'| filter:qst">
+			<td>{{x.name}}</td>
+			<td>{{x.capital}}</td>
+			<td>{{x.sport}}</td>
+		</tr>
+	</table>
+	</div>
+
+	<script>
+		
+		var app=angular.module('myapp',[]);
+		app.controller('myctrl',function($scope) {
+			var data=[
+		{
+		'name' :'India',
+		'capital':'New Delhi',
+		'sport': 'Hockey'
+		},
+		{
+		'name' :'China',
+		'capital':'Beijing',
+		'sport': 'Table Tennis'
+		},
+		{
+		'name' :'Pakistan',
+		'capital':'Islamabad',
+		'sport': 'Hockey'
+		},
+		{
+		'name' :'Srilanka',
+		'capital':'colombo',
+		'sport': 'Volley Ball'
+		},
+		{
+		'name' :'Indonesia',
+		'capital':'Jakartha',
+		'sport': 'Badminton'
+		},
+		{
+		'name' :'Australia',
+		'capital':'Canbara',
+		'sport': 'Cricket'
+		}];
+			$scope.countries=data;
+		});
+	</script>
+</body>
+</html>

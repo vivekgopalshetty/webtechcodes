@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ajax xml</title>
+
+
+	<script type="text/javascript">
+		
+		function loadXML(){
+
+				var xmlhttp;
+				xmlhttp=new XMLHttpRequest();
+				xmlhttp.onreadystateChange()=function()
+				{
+					if(xmlhttp.readyState==4 && xmlhttp.status=200)
+					{
+						document.getElementById("mydiv").innerHTML=xmlhttp.responseText;
+					}
+					xmlhttp.open('GET',"h1.txt",true);
+					xmlhttp.send();
+				}
+			}
+	</script>
+</head>
+<body>
+
+	<h1>hey there ajax asynchrnous load pages,without loading whole page we can change content of page</h1>
+
+	<div id="mydiv">
+		<h2>let AJAX</h2>
+	</div>
+	<button type="button" onclick="loadXML()">Click here to change</button>
+</body>
+</html>
