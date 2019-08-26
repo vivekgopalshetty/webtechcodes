@@ -1,7 +1,7 @@
 # webtechcodes
-it includes various examples of angular js,node js,mongoDB and connection between mongoDb and node js.
+It includes various examples of angular js,node js,mongoDB and connection between mongoDb and node js.
 
-This is repository contains famous examples.
+This is repository contains examples.
 it includes examples of
 <ul>
   <li>HTML</li>
